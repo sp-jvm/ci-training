@@ -60,9 +60,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: develop
 
-    defaults:
-      run:
-        working-directory: ci-training
+#    defaults:
+#      run:
+#        working-directory: ci-training
 
     steps:
       - uses: actions/checkout@v4
