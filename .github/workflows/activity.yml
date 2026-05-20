@@ -8,47 +8,47 @@ on:
   workflow_dispatch:
 
 jobs:
-#  security-scan:
-#    name: Security Scan
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v4
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-#  code-quality:
-#    name: Code Quality
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#        with:
-#          fetch-depth: 0
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-#  test-python:
-#    name: Run Tests (Python)
-#    runs-on: ubuntu-latest
-#    #needs: [security scan, code quality]
-#
-#    defaults:
-#      run:
-#        working-directory: playwright-python
-#
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v4
+  test-python:
+    name: Run Tests (Python)
+    runs-on: ubuntu-latest
+    #needs: [security scan, code quality]
 
-#  test-typescript:
-#    name: Run Tests (TypeScript)
-#    runs-on: ubuntu-latest
-#    needs: [security-scan, code-quality]  # Quality gates must pass first
-#
-#    defaults:
-#      run:
-#        working-directory: playwright-typescript
-#
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v4
+    defaults:
+      run:
+        working-directory: playwright-python
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+  test-typescript:
+    name: Run Tests (TypeScript)
+    runs-on: ubuntu-latest
+    needs: [security-scan, code-quality]  # Quality gates must pass first
+
+    defaults:
+      run:
+        working-directory: playwright-typescript
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
 
 
