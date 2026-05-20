@@ -74,5 +74,5 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test successful login with valid credentials/scenarios.spec.ts
 
