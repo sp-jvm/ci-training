@@ -27,7 +27,7 @@ jobs:
   test-python:
     name: Run Tests (Python)
     runs-on: ubuntu-latest
-    needs: [security scan, code quality]
+    #needs: [security scan, code quality]
 
     defaults:
       run:
