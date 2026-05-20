@@ -62,7 +62,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: playwright-typescript
+        working-directory: ci-training
 
     steps:
       - uses: actions/checkout@v4
